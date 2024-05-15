@@ -19,6 +19,7 @@ env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
   DOTNET_NOLOGO: true
   NuGetDirectory: ${{ github.workspace}}/nuget
+  SourceDirectory: ${{ github.workspace}}/Source
 
 defaults:
   run:
@@ -39,7 +40,7 @@ jobs:
 
     # Create the NuGet package in the folder from the environment variable NuGetDirectory
     - run: dotnet build --configuration Release
-    - run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
+    - run: dotnet pack ${{ env.SourceDirectory }}  --configuration Release --output ${{ env.NuGetDirectory }}
 
     # Publish the NuGet package as an artifact, so they can be used in the following jobs
     - uses: actions/upload-artifact@v3
@@ -56,6 +57,8 @@ jobs:
       # Install the .NET SDK indicated in the global.json file
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
+        with:
+            dotnet-version: 8.0.x
 
       # Download the NuGet package created in the previous job
       - uses: actions/download-artifact@v3
@@ -99,6 +102,8 @@ jobs:
       # Install the .NET SDK indicated in the global.json file
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
+        with:
+            dotnet-version: 8.0.x
 
       # Publish all NuGet packages to NuGet.org
       # Use --skip-duplicate to prevent errors if a package with the same version already exists.
