@@ -120,9 +120,9 @@
 		<AssemblyName>BSN.SmppClient</AssemblyName>
 		<AssemblyVersion>1.0.0</AssemblyVersion>
 		<FileVersion>1.0.0</FileVersion>
-		<Company>BSN Company</Company>
-		<Authors>BSN Developers</Authors>
-		<Copyright>BSN Co 2019-2024</Copyright>
+		<Company>Ardan Studio, BSN Company</Company>
+		<Authors>Ardan Studio, BSN Developers</Authors>
+		<Copyright>Ardan Studio Until 2024, BSN Co 2024</Copyright>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Version>1.0.0</Version>
 		<PackageProjectUrl>https://github.com/BSVN/Commons</PackageProjectUrl>
@@ -134,7 +134,7 @@
 		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Title>BSN.Commons</Title>
+		<Title>BSN.SMPPClient</Title>
 		<!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
@@ -144,10 +144,10 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageIcon>BSN.jpg</PackageIcon>
 		<PackageReleaseNotes>Please see CHANGELOG.md</PackageReleaseNotes>
-		<PackageTags>BSN;Commons;Onion;Enterprise;Infrastructure;DDD</PackageTags>
+		<PackageTags>BSN;SMPP;Onion;Enterprise;Infrastructure;DDD</PackageTags>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Include="..\BSN.jpg">
+		<None Include="..\..\BSN.jpg">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>

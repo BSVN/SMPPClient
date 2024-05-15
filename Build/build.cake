@@ -15,7 +15,8 @@ var target = Argument("target", "Default");
 var artifactsDir = "./artifacts/";
 var solutionPath = "../SmppClient.sln";
 var projectName = "SmppClient";
-var projectFolder = "../";
+var projectFolder = "../Source/";
+var gitRepoRootFolder = "../";
 var solutionVersion = "1.0.0";
 var projects = new List<(string path, string name, string version)>
 {
@@ -28,7 +29,7 @@ var testProjects = new List<(string path, string name, string dll)>
 };
 var coverageResultsFileName = "coverage.xml";
 var testResultsFileName = "nunitResults.xml";
-var currentBranch = Argument<string>("currentBranch", GitBranchCurrent("../../").FriendlyName);
+var currentBranch = Argument<string>("currentBranch", GitBranchCurrent(gitRepoRootFolder).FriendlyName);
 var isReleaseBuild = string.Equals(currentBranch, "master", StringComparison.OrdinalIgnoreCase);
 var configuration = "Release";
 var nugetApiKey = Argument<string>("nugetApiKey", null);
