@@ -10,7 +10,6 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Version>1.0.0</Version>
 		<PackageProjectUrl>https://github.com/BSVN/Commons</PackageProjectUrl>
-		<PackageLicenseUrl>https://github.com/BSVN/SMPPClient/blob/master/LICENSE.txt</PackageLicenseUrl>
 		<Description>SMPP Communication library for enterprise application</Description>
 
 		<!-- https://spdx.org/licenses/ -->
