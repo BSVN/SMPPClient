@@ -102,7 +102,7 @@
 		<BaseAddress>285212672</BaseAddress>
 		<ConfigurationOverrideFile>
 		</ConfigurationOverrideFile>
-		<DocumentationFile>..\..\Binaries\ArdanStudios.Common.SmppClient.xml</DocumentationFile>
+		<DocumentationFile>..\..\Binaries\BSN.SmppClient.xml</DocumentationFile>
 		<FileAlignment>4096</FileAlignment>
 		<NoStdLib>false</NoStdLib>
 		<NoWarn>
@@ -116,7 +116,7 @@
 		<BaseAddress>285212672</BaseAddress>
 		<ConfigurationOverrideFile>
 		</ConfigurationOverrideFile>
-		<DocumentationFile>..\..\Binaries\ArdanStudios.Common.SmppClient.xml</DocumentationFile>
+		<DocumentationFile>..\..\Binaries\BSN.SmppClient.xml</DocumentationFile>
 		<DebugSymbols>true</DebugSymbols>
 		<FileAlignment>4096</FileAlignment>
 		<NoStdLib>false</NoStdLib>
