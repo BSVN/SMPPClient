@@ -1,5 +1,65 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<AssemblyName>BSN.SmppClient</AssemblyName>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
+		<Company>Ardan Studio, BSN Company</Company>
+		<Authors>Ardan Studio, BSN Developers</Authors>
+		<Copyright>Ardan Studio Until 2024, BSN Co 2024</Copyright>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>1.0.0</Version>
+		<PackageProjectUrl>https://github.com/BSVN/Commons</PackageProjectUrl>
+		<Description>SMPP Communication library for enterprise application</Description>
+
+		<!-- https://spdx.org/licenses/ -->
+		<PackageLicenseExpression>BSD-2-Clause</PackageLicenseExpression>
+
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/BSVN/SMPPClient.git</RepositoryUrl>
+		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Title>BSN.SMPPClient</Title>
+		<!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageIcon>BSN.jpg</PackageIcon>
+		<PackageReleaseNotes>Please see CHANGELOG.md</PackageReleaseNotes>
+		<PackageTags>BSN, SMPP, Telecom</PackageTags>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="..\..\BSN.jpg">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+	<PropertyGroup>
+		<!-- https://www.meziantou.net/publishing-a-nuget-package-following-best-practices-using-github.htm#enable-the-dotnet-sd -->
+		<EnablePackageValidation>true</EnablePackageValidation>
+
+		<!-- Optional: Detect breaking changes from a previous version -->
+	    <!-- <PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion> -->
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- https://www.meziantou.net/publishing-a-nuget-package-following-best-practices-using-github.htm#include-symbols-and -->
+	    <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+	    </PackageReference>
+	</ItemGroup>
+
+	<PropertyGroup>
 		<AssemblyOriginatorKeyFile>
 		</AssemblyOriginatorKeyFile>
 		<DefaultClientScript>JScript</DefaultClientScript>
@@ -42,7 +102,7 @@
 		<BaseAddress>285212672</BaseAddress>
 		<ConfigurationOverrideFile>
 		</ConfigurationOverrideFile>
-		<DocumentationFile>..\..\Binaries\ArdanStudios.Common.SmppClient.xml</DocumentationFile>
+		<DocumentationFile>..\..\Binaries\BSN.SmppClient.xml</DocumentationFile>
 		<FileAlignment>4096</FileAlignment>
 		<NoStdLib>false</NoStdLib>
 		<NoWarn>
@@ -56,7 +116,7 @@
 		<BaseAddress>285212672</BaseAddress>
 		<ConfigurationOverrideFile>
 		</ConfigurationOverrideFile>
-		<DocumentationFile>..\..\Binaries\ArdanStudios.Common.SmppClient.xml</DocumentationFile>
+		<DocumentationFile>..\..\Binaries\BSN.SmppClient.xml</DocumentationFile>
 		<DebugSymbols>true</DebugSymbols>
 		<FileAlignment>4096</FileAlignment>
 		<NoStdLib>false</NoStdLib>
@@ -115,48 +175,5 @@
 		<PackageReference Include="EnterpriseLibrary.Common" Version="6.0.1304" />
 		<PackageReference Include="EnterpriseLibrary.Data" Version="6.0.1304" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
-	</ItemGroup>
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<AssemblyName>BSN.SmppClient</AssemblyName>
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
-		<Company>Ardan Studio, BSN Company</Company>
-		<Authors>Ardan Studio, BSN Developers</Authors>
-		<Copyright>Ardan Studio Until 2024, BSN Co 2024</Copyright>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.0</Version>
-		<PackageProjectUrl>https://github.com/BSVN/Commons</PackageProjectUrl>
-		<PackageLicenseUrl></PackageLicenseUrl>
-		<Description>SMPP Communication library for enterprise application</Description>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/BSVN/SMPPClient.git</RepositoryUrl>
-		<ProduceReferenceAssembly>True</ProduceReferenceAssembly>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Title>BSN.SMPPClient</Title>
-		<!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
-		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
-		<IncludeSymbols>True</IncludeSymbols>
-		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<PackageIcon>BSN.jpg</PackageIcon>
-		<PackageReleaseNotes>Please see CHANGELOG.md</PackageReleaseNotes>
-		<PackageTags>BSN;SMPP;Onion;Enterprise;Infrastructure;DDD</PackageTags>
-	</PropertyGroup>
-	<ItemGroup>
-		<None Include="..\..\BSN.jpg">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-	</ItemGroup>
-	<ItemGroup>
-		<None Include="..\..\README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
 	</ItemGroup>
 </Project>
