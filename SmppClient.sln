@@ -10,6 +10,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{DDB3B9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{AF70F1AF-4C3C-439B-A72A-43EDEBB1054B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25876BBC-6990-4D23-ADE4-5E2A56072650}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+		sbuild.bat = sbuild.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{0FD0D257-BCFF-4A8C-AAC8-275164BFE4E8}"
+	ProjectSection(SolutionItems) = preProject
+		Build\build.cake = Build\build.cake
+		Build\build.ps1 = Build\build.ps1
+		Build\linux-build.cake = Build\linux-build.cake
+		Build\windows-build.cake = Build\windows-build.cake
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{1D9CCE14-9056-4D13-8AC2-542F1CB34707}"
+	ProjectSection(SolutionItems) = preProject
+		Document\SMPP_v3_4_Issue1_2.pdf = Document\SMPP_v3_4_Issue1_2.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{22282D33-C475-40F1-AA74-9BBB57FE07A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{91C871D0-6B46-412F-9B3E-8F86AAA1CB41}"
+	ProjectSection(SolutionItems) = preProject
+		.config\dotnet-tools.json = .config\dotnet-tools.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{3014BA95-3E68-4D5B-B03E-3B3288C19C48}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +84,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8CBF9913-5ED6-4C40-8675-385FE08F15AA} = {DDB3B925-BE16-4ADE-BAC3-1EC27ED74BFE}
 		{0CF6060A-904C-41E8-BCA2-C63114DFFCB0} = {AF70F1AF-4C3C-439B-A72A-43EDEBB1054B}
+		{3014BA95-3E68-4D5B-B03E-3B3288C19C48} = {22282D33-C475-40F1-AA74-9BBB57FE07A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {24DDD7FA-6419-43B9-ACF8-39C4D4E6D3C6}
