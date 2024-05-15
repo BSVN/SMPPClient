@@ -17,6 +17,7 @@ namespace BSN.SmppClient
 
         /// <summary> Called when a message is received </summary>
         /// <param name="logKey"></param>
+        /// <param name="messageType"></param>
         /// <param name="serviceType"></param>
         /// <param name="sourceTon"></param>
         /// <param name="sourceNpi"></param>

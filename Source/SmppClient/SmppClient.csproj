@@ -112,6 +112,7 @@
 		<Content Include="DataTypes\spSMPP_Pdu_Insert.sql" />
 	</ItemGroup>
 	<ItemGroup>
+		<PackageReference Include="EnterpriseLibrary.Common" Version="6.0.1304" />
 		<PackageReference Include="EnterpriseLibrary.Data" Version="6.0.1304" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
 	</ItemGroup>

@@ -9,13 +9,6 @@ namespace SmppTestClient
 {
     class SMSControl
     {
-        #region Properties
-
-        /// <summary> A reference to the esme manager </summary>
-        private static ESMEManager connectionManager = null;
-
-        #endregion
-
         static void Main(string[] args)
         {
             string server = "smscsim.smpp.org";       // IP Address or Name of the server
@@ -26,7 +19,7 @@ namespace SmppTestClient
             DataCodings dataCoding = DataCodings.ASCII; // The encoding to use if Default is returned in any PDU or encoding request
 
             // Create a esme manager to communicate with an ESME
-            connectionManager = new ESMEManager("Test",
+            ESMEManager connectionManager = new ESMEManager("Test",
                                                 shortLongCode,
                                                 new ESMEManager.CONNECTION_EVENT_HANDLER(ConnectionEventHandler),
                                                 new ESMEManager.RECEIVED_MESSAGE_HANDLER(ReceivedMessageHandler),
@@ -56,8 +49,8 @@ namespace SmppTestClient
 
                 Console.Write("\n#>");
 
-                string command = Console.ReadLine();
-                if (command.Length == 0)
+                string? command = Console.ReadLine();
+                if (command == null || command.Length == 0)
                     continue;
 
                 switch (command.Split(' ')[0].ToString())
@@ -68,7 +61,7 @@ namespace SmppTestClient
                         break;
 
                     default:
-                        ProcessCommand(command);
+                        ProcessCommand(connectionManager, command);
                         break;
                 }
 
@@ -82,23 +75,23 @@ namespace SmppTestClient
             }
         }
 
-        private static void ProcessCommand(string command)
+        private static void ProcessCommand(ESMEManager connectionManager, string command)
         {
             string[] parts = command.Split(' ');
 
             switch (parts[0])
             {
                 case "send":
-                    SendMessage(command);
+                    SendMessage(connectionManager, command);
                     break;
 
                 case "query":
-                    QueryMessage(command);
+                    QueryMessage(connectionManager, command);
                     break;
             }
         }
 
-        private static void SendMessage(string command)
+        private static void SendMessage(ESMEManager connectionManager, string command)
         {
             string[] parts = command.Split(' ');
             string phoneNumber = parts[1];
@@ -114,13 +107,11 @@ namespace SmppTestClient
 
             // There is a default encoding set for each connection. This is used if the encodeDataCoding is Default
 
-            SubmitSm submitSm = null;
-            SubmitSmResp submitSmResp = null;
-            connectionManager.SendMessage(phoneNumber, null, Ton.National, Npi.ISDN, submitDataCoding, encodeDataCoding, message, out submitSm, out submitSmResp);
+            connectionManager.SendMessage(phoneNumber, null, Ton.National, Npi.ISDN, submitDataCoding, encodeDataCoding, message, out SubmitSm submitSm, out SubmitSmResp submitSmResp);
             Console.Write("submitSm:{0}, submitSmResp:{1}, messageId:{2}", submitSm.DestAddr, submitSmResp.Status, submitSmResp.MessageId);
         }
 
-        private static void QueryMessage(string command)
+        private static void QueryMessage(ESMEManager connectionManager, string command)
         {
             string[] parts = command.Split(' ');
             string messageId = parts[1];
@@ -181,7 +172,7 @@ namespace SmppTestClient
                     return null;
                 }
 
-                string connectionString = null; // If null InsertPdu will just log to stdout
+                string? connectionString = null; // If null InsertPdu will just log to stdout
                 int serviceId = 0;              // Internal Id used to track multiple SMSC systems
 
                 PduApp.InsertPdu(logKey, connectionString, serviceId, pduDirectionType, details, pdu.PduData.BreakIntoDataBlocks(4096), out pduHeaderId);
