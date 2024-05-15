@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Register an instance of an ESME (Extended Short Message Entity) with the SMSC (Short Message Service Centre)
     /// system and request an SMPP session over this network connection for the submission or

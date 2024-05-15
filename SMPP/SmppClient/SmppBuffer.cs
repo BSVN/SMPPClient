@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> The core smpp data structure </summary>
     public class SmppBuffer

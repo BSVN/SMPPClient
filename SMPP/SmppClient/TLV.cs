@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
 	/// <summary> Represents TLV (Tag, Length, Value) format for optional parameters </summary>
 	public class TLV

@@ -6,7 +6,7 @@ using System.Text;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Represents SME address or/and Distribution name </summary>
     public class DestinationAddress

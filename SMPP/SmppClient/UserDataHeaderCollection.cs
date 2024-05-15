@@ -6,7 +6,7 @@ using System.Linq;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> User Data Header Collection </summary>
     public class UserDataHeaderCollection : List<UserDataHeader>

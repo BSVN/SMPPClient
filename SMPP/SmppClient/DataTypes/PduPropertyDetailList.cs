@@ -7,7 +7,7 @@ using System.Data;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient.DataTypes
+namespace BSN.SmppClient.DataTypes
 {
     /// <summary> Provides support for inserting pdu's into the sql server </summary>
     public class PduPropertyDetails : List<PduPropertyDetail>, IEnumerable<SqlDataRecord>

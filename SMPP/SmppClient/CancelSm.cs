@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Cancel previously submitted short message that is still pending delivery </summary>
     public class CancelSm : Header, IPacket, IPduDetails

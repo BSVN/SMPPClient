@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ArdanStudios.Common.Data;
-using ArdanStudios.Common.SmppClient.Data;
+using BSN.SmppClient.Data;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient.App
+namespace BSN.SmppClient.App
 {
     /// <summary> Provides access to the pdu related business rules </summary>
     public class PduApp
@@ -27,7 +27,7 @@ namespace ArdanStudios.Common.SmppClient.App
         /// <returns> ResultCodeTypes </returns>
         public static int InsertPdu(string logKey, string connection, int smscServiceId, PduDirectionTypes pduDirectionType, List<PduPropertyDetail> details, List<byte[]> pduDataBlocks, out Guid? pduHeaderId)
         {
-            Console.WriteLine("ArdanStudios.Common.SmppClient.App.PduApp : InsertPdu : Started : LogKey[{0}] SMSCServiceId[{1}] PduDirectionType[{2}] DataBlocks[{3}]", logKey, smscServiceId, pduDirectionType, pduDataBlocks.Count);
+            Console.WriteLine("BSN.SmppClient.App.PduApp : InsertPdu : Started : LogKey[{0}] SMSCServiceId[{1}] PduDirectionType[{2}] DataBlocks[{3}]", logKey, smscServiceId, pduDirectionType, pduDataBlocks.Count);
 
             int resultType = 0;
             pduHeaderId = null;
@@ -56,10 +56,10 @@ namespace ArdanStudios.Common.SmppClient.App
                 }
 
                 // Write header
-                Console.WriteLine("ArdanStudios.Common.SmppClient.App.PduApp : InsertPdu : PDU : {0} : {1} : {2} : {3}", details[0].StartingBytePosition, details[0].Name, BitConverter.ToString(details[0].DataBlock).Replace("-", " "), commandLength);
-                Console.WriteLine("ArdanStudios.Common.SmppClient.App.PduApp : InsertPdu : PDU : {0} : {1} : {2} : {3}", details[1].StartingBytePosition, details[1].Name, BitConverter.ToString(details[1].DataBlock).Replace("-", " "), commandSet);
-                Console.WriteLine("ArdanStudios.Common.SmppClient.App.PduApp : InsertPdu : PDU : {0} : {1} : {2} : {3}", details[2].StartingBytePosition, details[2].Name, BitConverter.ToString(details[2].DataBlock).Replace("-", " "), commandStatus);
-                Console.WriteLine("ArdanStudios.Common.SmppClient.App.PduApp : InsertPdu : PDU : {0} : {1} : {2} : {3}", details[3].StartingBytePosition, details[3].Name, BitConverter.ToString(details[3].DataBlock).Replace("-", " "), sequenceNumber);
+                Console.WriteLine("BSN.SmppClient.App.PduApp : InsertPdu : PDU : {0} : {1} : {2} : {3}", details[0].StartingBytePosition, details[0].Name, BitConverter.ToString(details[0].DataBlock).Replace("-", " "), commandLength);
+                Console.WriteLine("BSN.SmppClient.App.PduApp : InsertPdu : PDU : {0} : {1} : {2} : {3}", details[1].StartingBytePosition, details[1].Name, BitConverter.ToString(details[1].DataBlock).Replace("-", " "), commandSet);
+                Console.WriteLine("BSN.SmppClient.App.PduApp : InsertPdu : PDU : {0} : {1} : {2} : {3}", details[2].StartingBytePosition, details[2].Name, BitConverter.ToString(details[2].DataBlock).Replace("-", " "), commandStatus);
+                Console.WriteLine("BSN.SmppClient.App.PduApp : InsertPdu : PDU : {0} : {1} : {2} : {3}", details[3].StartingBytePosition, details[3].Name, BitConverter.ToString(details[3].DataBlock).Replace("-", " "), sequenceNumber);
 
                 // Write the details
                 for (int detail = 4; detail < details.Count; ++detail)
@@ -98,7 +98,7 @@ namespace ArdanStudios.Common.SmppClient.App
                             break;
                     }
 
-                    Console.WriteLine("ArdanStudios.Common.SmppClient.App.PduApp : InsertPdu : PDU : {0} : {1} : {2} : {3}", details[detail].StartingBytePosition, details[detail].Name, dataBlock, dataValue);
+                    Console.WriteLine("BSN.SmppClient.App.PduApp : InsertPdu : PDU : {0} : {1} : {2} : {3}", details[detail].StartingBytePosition, details[detail].Name, dataBlock, dataValue);
                 }
             }
 
@@ -106,10 +106,10 @@ namespace ArdanStudios.Common.SmppClient.App
             {
                 resultType = 900000;
 
-                Console.WriteLine("ArdanStudios.Common.SmppClient.App.PduApp : InsertPdu : ERROR : {0}", exception.ToString());
+                Console.WriteLine("BSN.SmppClient.App.PduApp : InsertPdu : ERROR : {0}", exception.ToString());
             }
 
-            Console.WriteLine("ArdanStudios.Common.SmppClient.App.PduApp : InsertPdu : Completed : ResultType[{0}]", resultType);
+            Console.WriteLine("BSN.SmppClient.App.PduApp : InsertPdu : Completed : ResultType[{0}]", resultType);
 
             return resultType;
         }

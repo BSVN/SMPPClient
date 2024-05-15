@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> SubmitSm PDU to submit a short message to the SMSC </summary>
     public class SubmitSm : Header, IPacket, IPduDetails

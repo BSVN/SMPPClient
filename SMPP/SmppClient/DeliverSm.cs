@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> The deliver_sm is issued by the SMSC (Short Message Service Centre) to send a
     /// message to an ESME (Extended Short Message Entity). Using this command, the SMSC may route a

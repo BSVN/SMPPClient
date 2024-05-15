@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Deregister an instance of an ESME (Extended Short Message Entity) from the
     /// SMSC (Short Message Service Centre) and inform the SMSC that the ESME no longer wishes

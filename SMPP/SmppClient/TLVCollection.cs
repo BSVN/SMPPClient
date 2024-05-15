@@ -6,7 +6,7 @@ using System.Linq;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Collection of optional parametersin TLV format </summary>
     public class TLVCollection : List<TLV>

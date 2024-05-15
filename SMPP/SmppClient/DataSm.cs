@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> This command is used to transfer data between the SMSC (Short Message Service Centre) and the
     /// ESME (Extended Short Message Entity). It may be used by both the ESME and SMSC  </summary>

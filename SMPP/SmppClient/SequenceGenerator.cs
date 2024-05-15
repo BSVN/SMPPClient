@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Generates sequence numbers </summary>
     internal class SequenceGenerator

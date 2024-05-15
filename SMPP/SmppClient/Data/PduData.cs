@@ -4,11 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using ArdanStudios.Common.Data;
-using ArdanStudios.Common.SmppClient.DataTypes;
+using BSN.SmppClient.DataTypes;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient.Data
+namespace BSN.SmppClient.Data
 {
     /// <summary> Provides access to the pdu releated database tables </summary>
     internal static class PduData

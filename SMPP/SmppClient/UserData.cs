@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
 	/// <summary> UserData class contains the user data of PDU </summary>
 	public class UserData

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> This message can be sent by either the ESME (Extended Short Message Entity) or
     /// SMSC (Short Message Service Centre) and is used to provide a confidencecheck of the communication

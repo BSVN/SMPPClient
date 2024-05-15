@@ -7,7 +7,7 @@ using System.Text;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     #region PduDataTypes
 

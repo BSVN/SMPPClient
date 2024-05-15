@@ -7,7 +7,7 @@
 		<DefaultTargetSchema>IE50</DefaultTargetSchema>
 		<DelaySign>false</DelaySign>
 		<OutputType>Library</OutputType>
-		<RootNamespace>ArdanStudios.Common.SmppClient</RootNamespace>
+		<RootNamespace>BSN.SmppClient</RootNamespace>
 		<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
 		<StartupObject>
 		</StartupObject>

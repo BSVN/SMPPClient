@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     #region DataCodings Enum
     

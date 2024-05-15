@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Represents the response to the submit_multi PDU </summary>
     public class SubmitMultiSmResp : Header, IPacket, IPduDetails

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Query the status of a previously submitted short message </summary>
     public class QuerySm : Header, IPacket, IPduDetails

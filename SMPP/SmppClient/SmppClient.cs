@@ -16,7 +16,7 @@ using ArdanStudios.Common.Utilities;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> SMPP protocol client class for connection with an SMSC over a TCP/IP 
     /// and for sending or receiving short messages to and from the SMSC </summary>

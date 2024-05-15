@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Represents the response to the data_sm PDU </summary>
     public class DataSmResp : Header, IPacket, IPduDetails

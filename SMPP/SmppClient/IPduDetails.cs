@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
 	/// <summary> IPduDetails Interface </summary>
 	public interface IPduDetails

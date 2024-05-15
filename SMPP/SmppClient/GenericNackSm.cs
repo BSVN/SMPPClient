@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> This is a generic negative acknowledgement to an SMPP PDU submitted with an invalid
     /// message header </summary>

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> This message is sent by the SMSC (Short Message Service Centre) to the ESME (Extended Short Message Entity),
     /// when the SMSC has detected that a particular mobile subscriber has become available and a delivery

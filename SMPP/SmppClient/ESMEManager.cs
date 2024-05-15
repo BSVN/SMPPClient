@@ -8,7 +8,7 @@ using System.Threading;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Provides ESME (Extended Short Message Entity) Management </summary>
     public class ESMEManager : IDisposable

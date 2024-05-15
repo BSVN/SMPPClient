@@ -6,7 +6,7 @@ using System.Data;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient.DataTypes
+namespace BSN.SmppClient.DataTypes
 {
     /// <summary> SQL Server Insert support </summary>
     public class SMSCPduDataBlocks : List<byte[]>, IEnumerable<SqlDataRecord>

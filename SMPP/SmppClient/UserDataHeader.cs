@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> Represents GSM User Data Header information in the short message user data </summary>
     public class UserDataHeader

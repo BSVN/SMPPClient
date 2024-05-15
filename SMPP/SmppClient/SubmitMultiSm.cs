@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace ArdanStudios.Common.SmppClient
+namespace BSN.SmppClient
 {
     /// <summary> SubmitMulti PDU to submit an SMPP message for delivery to multiple
     /// recipients or to one or more Distribution Lists </summary>

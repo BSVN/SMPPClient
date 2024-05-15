@@ -1,7 +1,7 @@
 ﻿#region Namespaces
 
-using ArdanStudios.Common.SmppClient;
-using ArdanStudios.Common.SmppClient.App;
+using BSN.SmppClient;
+using BSN.SmppClient.App;
 
 #endregion
 
