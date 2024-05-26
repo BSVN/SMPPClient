@@ -99,11 +99,13 @@ namespace SmppTestClient
 
             // This is set in the Submit PDU to the SMSC
             // If you are responding to a received message, make this the same as the received message
-            DataCodings submitDataCoding = DataCodings.Default;
+            // Adjusted to ucs2 for supporting Arabic character.
+            DataCodings submitDataCoding = DataCodings.UCS2;
 
             // Use this to encode the message
             // We need to know the actual encoding.
-            DataCodings encodeDataCoding = DataCodings.ASCII;
+            // Adjusted to ucs2 for supporting Arabic character.
+            DataCodings encodeDataCoding = DataCodings.UCS2;
 
             // There is a default encoding set for each connection. This is used if the encodeDataCoding is Default
 
