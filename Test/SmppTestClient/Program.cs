@@ -49,7 +49,27 @@ namespace SmppTestClient
 
                 Console.Write("\n#>");
 
-                string? command = Console.ReadLine();
+                Console.WriteLine("Select language for testing: ");
+                Console.WriteLine("1. English");
+                Console.WriteLine("2. Arabic");
+
+                string choice = Console.ReadLine();
+                string? command;
+
+                switch (choice)
+                {
+                    case "1":
+                        command = "send 12223334444 Hello";
+                        break;
+                    case "2":
+                        command = "send 12223334444 سلام علیکم";
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice, defaulting to English.");
+                        command = "send 12223334444 Hello";
+                        break;
+                }
+
                 if (command == null || command.Length == 0)
                     continue;
 
