@@ -540,6 +540,48 @@ namespace BSN.SmppClient
         /// <param name="serviceType"></param>
         /// <param name="sourceTon"></param>
         /// <param name="sourceNpi"></param>
+        /// <param name="destTon"></param>
+        /// <param name="destNpi"></param>
+        /// <param name="submitDataCoding"></param>
+        /// <param name="encodeDataCoding"></param>
+        /// <param name="message"></param>
+        /// <param name="submitSm"></param>
+        /// <param name="submitSmResp"></param>
+        /// <returns> 1 - Successful / 0 - Failed </returns>
+        public int SendMessage(string phoneNumber, string serviceType, Ton sourceTon, Npi sourceNpi, Ton destTon, Npi destNpi, DataCodings submitDataCoding, DataCodings encodeDataCoding, string message, out SubmitSm submitSm, out SubmitSmResp submitSmResp)
+        {
+            int retVal = 0;
+
+            submitSm = null;
+            submitSmResp = null;
+            try
+            {
+                // Capture the next transmitter connection
+                ESMEConnection eSMEConnection = NextTransmitterConnection();
+
+                if (eSMEConnection == null)
+                {
+                    WriteLog("ESMEManager : SendMessage : Warning : Not Bound To The SMPP Server");
+
+                    return 2;
+                }
+
+                // Send the message
+                retVal = eSMEConnection.SendMessage(phoneNumber, serviceType, sourceTon, sourceNpi, destTon, destNpi, submitDataCoding, encodeDataCoding, message, out submitSm, out submitSmResp);
+            }
+            catch (Exception ex)
+            {
+                WriteLog(LogEventNotificationTypes.Email, "ESMEManager : SendMessage : ERROR : {0}", ex.ToString());
+            }
+
+            return retVal;
+        }
+
+        /// <summary> Called to send the message </summary>
+        /// <param name="phoneNumber"></param>
+        /// <param name="serviceType"></param>
+        /// <param name="sourceTon"></param>
+        /// <param name="sourceNpi"></param>
         /// <param name="submitDataCoding"></param>
         /// <param name="encodeDataCoding"></param>
         /// <param name="message"></param>
