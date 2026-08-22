@@ -766,7 +766,7 @@ namespace BSN.SmppClient
         /// <param name="message"></param>
         /// <param name="submitSm"></param>
         /// <param name="submitSmResp"></param>
-        /// <returns> 0 - Successful / 1 - Failed / 2 - Not Connected </returns>
+        /// <returns> 0 - Successful / 1 - Failed For Exception / 2 - Not Binded / 3 - Failed For Unknown Reason </returns>
         public int SendMessage(string phoneNumber, string serviceType, Ton sourceTon, Npi sourceNpi, Ton destinationTon, Npi destinationNpi, DataCodings submitDataCoding, DataCodings encodeDataCoding, string message, out SubmitSm submitSm, out SubmitSmResp submitSmResp)
         {
             int retVal = 1;
