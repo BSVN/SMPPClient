@@ -503,7 +503,7 @@ namespace BSN.SmppClient
         /// <param name="message"></param>
         /// <param name="submitSm"></param>
         /// <param name="submitSmResp"></param>
-        /// <returns> 1 - Successful / 0 - Failed </returns>
+        /// <returns> 0 - Successful / 1 - Failed </returns>
         public int SendMessage(string phoneNumber, string serviceType, Ton sourceTon, Npi sourceNpi, DataCodings submitDataCoding, DataCodings encodeDataCoding, string message,  out SubmitSm submitSm, out SubmitSmResp submitSmResp)
         {
             int retVal = 0;
@@ -547,7 +547,7 @@ namespace BSN.SmppClient
         /// <param name="message"></param>
         /// <param name="submitSm"></param>
         /// <param name="submitSmResp"></param>
-        /// <returns> 1 - Successful / 0 - Failed </returns>
+        /// <returns> 0 - Successful / 1 - Failed </returns>
         public int SendMessage(string phoneNumber, string serviceType, Ton sourceTon, Npi sourceNpi, Ton destTon, Npi destNpi, DataCodings submitDataCoding, DataCodings encodeDataCoding, string message, out SubmitSm submitSm, out SubmitSmResp submitSmResp)
         {
             int retVal = 0;
