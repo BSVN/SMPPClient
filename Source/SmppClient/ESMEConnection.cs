@@ -757,6 +757,106 @@ namespace BSN.SmppClient
         /// <summary> Called to send the message </summary>
         /// <param name="phoneNumber"></param>
         /// <param name="serviceType"></param>
+        /// <param name="sourceTon"></param>
+        /// <param name="sourceNpi"></param>
+        /// <param name="destinationTon"></param>
+        /// <param name="destinationNpi"></param>
+        /// <param name="submitDataCoding"></param>
+        /// <param name="encodeDataCoding"></param>
+        /// <param name="message"></param>
+        /// <param name="submitSm"></param>
+        /// <param name="submitSmResp"></param>
+        /// <returns> 0 - Successful / 1 - Failed For Exception / 2 - Not Binded / 3 - Failed For Unknown Reason </returns>
+        public int SendMessage(string phoneNumber, string serviceType, Ton sourceTon, Npi sourceNpi, Ton destinationTon, Npi destinationNpi, DataCodings submitDataCoding, DataCodings encodeDataCoding, string message, out SubmitSm submitSm, out SubmitSmResp submitSmResp)
+        {
+            int retVal = 1;
+
+            submitSm = null;
+            submitSmResp = null;
+
+            try
+            {
+                if (Client.Status != ConnectionStatus.Bound)
+                {
+                    WriteLog("ESMEConnection : SendMessage : Warning : Not Connected To The SMPP Server");
+                    return 2;
+                }
+
+                // The message to send
+                string sendMessage = null;
+
+                // Do we need to cut the message down
+                if (encodeDataCoding == DataCodings.UCS2)
+                {
+                    // UCS2 only supports 140 bytes
+                    if (message.Length > 70)
+                    {
+                        WriteLog(LogEventNotificationTypes.Email, "ESMEConnection : SendMessage : WARNING : Truncating UCS2 message to 70 characters.");
+                        
+                        // The default is Unicode so truncate the message
+                        sendMessage = message.Substring(0, 70);
+                    }
+                }
+                else if (message.Length > 160)
+                {
+                    WriteLog(LogEventNotificationTypes.Email, "ESMEConnection : SendMessage : WARNING : Truncating Default message to 160 characters.");
+                    sendMessage = message.Substring(0, 160);
+                }
+
+                // Prepare the message, I have made sure there is only ever one message
+                // with the trunacting above
+                submitSm = Client.PrepareSubmit(
+                    SubmitMode.ShortMessage, 
+                    serviceType, 
+                    (byte)sourceTon, 
+                    (byte)sourceNpi, 
+                    ShortLongCode, 
+                    (byte)destinationTon, 
+                    (byte)destinationNpi, 
+                    phoneNumber, 
+                    submitDataCoding, 
+                    encodeDataCoding, 
+                    (sendMessage == null) ? message : sendMessage);
+
+                // Send the message
+                submitSmResp = Client.Submit(submitSm);
+
+                // Log the send call
+                WriteLog("ESMEConnection : SendMessage : Send : Sequence[{0}] Phone[{1}] Status[{2}]", submitSmResp.Sequence, phoneNumber, submitSmResp.Status);
+
+                // Success
+                if (submitSmResp.Status == CommandStatus.ESME_ROK)
+                {
+                    retVal = 0;
+                }
+                // Bind Failed
+                else if (submitSmResp.Status == CommandStatus.ESME_RBINDFAIL)
+                {
+                    WriteLog("ESMEConnection : SendMessage : ERROR : Bind Failed");
+
+                    retVal = 2;
+                }
+                // Isn't successful
+                else
+                {
+                    WriteLog("ESMEConnection : SendMessage : ERROR : Failed For Unknown Reason");
+
+                    retVal = 3;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                WriteLog(LogEventNotificationTypes.Email, "ESMEConnection : SendMessage : ERROR : {0}", ex.ToString());
+                retVal = 1;
+            }
+
+            return retVal;
+        }
+
+        /// <summary> Called to send the message </summary>
+        /// <param name="phoneNumber"></param>
+        /// <param name="serviceType"></param>
         /// <param name="destinationTon"></param>
         /// <param name="destinationNpi"></param>
         /// <param name="submitDataCoding"></param>
