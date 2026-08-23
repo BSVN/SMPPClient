@@ -17,7 +17,7 @@ var solutionPath = "../SmppClient.sln";
 var projectName = "SmppClient";
 var projectFolder = "../Source/";
 var gitRepoRootFolder = "../";
-var solutionVersion = "1.0.0";
+var solutionVersion = "1.1.0";
 var projects = new List<(string path, string name, string version)>
 {
 	("SmppClient/", "SmppClient.csproj", solutionVersion),

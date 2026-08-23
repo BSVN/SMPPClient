@@ -1,14 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<AssemblyName>BSN.SmppClient</AssemblyName>
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
+		<AssemblyVersion>1.1.0</AssemblyVersion>
+		<FileVersion>1.1.0</FileVersion>
 		<Company>Ardan Studio, BSN Company</Company>
 		<Authors>Ardan Studio, BSN Developers</Authors>
 		<Copyright>Ardan Studio Until 2024, BSN Co 2024</Copyright>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.0</Version>
+		<Version>1.1.0</Version>
 		<PackageProjectUrl>https://github.com/BSVN/Commons</PackageProjectUrl>
 		<Description>SMPP Communication library for enterprise application</Description>
 
@@ -49,7 +49,7 @@
 		<EnablePackageValidation>true</EnablePackageValidation>
 
 		<!-- Optional: Detect breaking changes from a previous version -->
-	    <!-- <PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion> -->
+	    <!-- <PackageValidationBaselineVersion>1.1.0</PackageValidationBaselineVersion> -->
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- https://www.meziantou.net/publishing-a-nuget-package-following-best-practices-using-github.htm#include-symbols-and -->
@@ -92,7 +92,7 @@
 		<UpdateRequired>false</UpdateRequired>
 		<MapFileExtensions>true</MapFileExtensions>
 		<ApplicationRevision>0</ApplicationRevision>
-		<ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+		<ApplicationVersion>1.1.0.%2a</ApplicationVersion>
 		<UseApplicationTrust>false</UseApplicationTrust>
 		<BootstrapperEnabled>true</BootstrapperEnabled>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
